@@ -30,13 +30,15 @@ p {
 	left:-200px;
 }
 .click {
-	border: 3px black solid;
-	border-radius: 5px;
 	background: white;
 	color: black;
-	width: 10%;
-	margin: auto;
+	font-size: 125%;
 }
+
+.click:hover {
+	color:blue;
+}
+
 a {
 	text-decoration: none;
 }
