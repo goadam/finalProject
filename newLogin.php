@@ -61,14 +61,15 @@ if(isset($_POST['username'])) {
 				} elseif (strlen($password) < 6) {
 					echo "Password must be 6 characters long.";
 				} else {
-					$stmt = $mysqli->prepare("INSERT INTO road_trip_db (name) VALUES (?)");
+					$stmt = $mysqli->prepare("INSERT INTO road_trip_db (pw, name) VALUES (?,?)");
 			
 					/* bind parameters for markers */
-					$stmt->bind_param("s", $username);
+					$stmt->bind_param("ss", $password, $username);
 			
 					/* execute query */
 					$stmt->execute();
 					$_SESSION['user'] = $username;
+					$_SESSION['pass'] = $password;
 					echo '<script> window.location="http://web.engr.oregonstate.edu/~martinad/final/userpage.php"</script>';
 				}
 			}

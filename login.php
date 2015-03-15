@@ -34,7 +34,7 @@ $password = "";
 if(isset($_POST['username'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	echo "$username";
+	
 	/* create a prepared statement */
 	if ($stmt = $mysqli->prepare("SELECT name FROM road_trip_db WHERE name=?")) {
 		
@@ -52,43 +52,42 @@ if(isset($_POST['username'])) {
 		
 		$stmt->close();
 		
-		echo "name = $name";
-		echo "password = $password";
-		
 		if($username == "") {
 			echo 'Please enter a username.';
 		} elseif ($name == $username){
 			
 			if(isset($_POST['password'])) {
-				echo "1";
 				$password = $_POST['password'];
+				
 				if($password == "") {
 					echo "Please enter a password";
 				} else {
-					echo "2";
 					$stmt2 = $mysqli->prepare("SELECT pw FROM road_trip_db WHERE name=?");
-					echo "3 $username";
+		
 					/* bind parameters for markers */
 					$stmt2->bind_param("s", $username);
-					echo "4";
+					
 					/* execute query */
 					$stmt2->execute();
-					echo "5";
+					
 					/* bind result variables */
 					$stmt2->bind_result($dbpassword);
 					
 					/* fetch value */
 					$stmt2->fetch();
-					echo "dbPass = $dbpassword";
+					
 					if($password == $dbpassword) {
-						echo "END";
 						$_SESSION['user'] = $username;
-						
+						$_SESSION['pass'] = $password;
 						$stmt2->close();
 						echo '<script> window.location="http://web.engr.oregonstate.edu/~martinad/final/userpage.php"</script>';
+					} else {
+						echo "Password is incorrect.";
 					}
 				}
 			}
+		} else {
+			echo "username not found.";
 		}
 	}
 }

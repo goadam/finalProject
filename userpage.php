@@ -2,7 +2,6 @@
 <head>
     <meta charset="UTF-8">
 	<title>Road Trip Planner</title>
-	<link href="roadTrip.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrap">
@@ -10,10 +9,13 @@
 			<h1>My Road Trip Planner</h1> 
 		</header>
 		<h2>Road Trip Select</h2>
-		<form action="userpage.php" method="post">
-		<label for="select">Please type the name of the roadtrip you want to view.</label>
-		<input type="text" name="select" id="select" /><br/>
+		<form action="tripSelected.php" method="post">
+		<label for="selected">Please type the name of the roadtrip you want to view.</label>
+		<input type="text" name="selected" id="selected" /><br/>
 		<input type="submit" value="Select"/><br>
+		Or click
+		<a href ="newTrip.php">here</a>
+		for new trip.
 	</div>
 </body>
 </html>
@@ -21,7 +23,12 @@
 
 <?php
 session_start();
-echo "this is". $_SESSION['user'];
+include "storedInfo.php";
+$mysqli = new mysqli('oniddb.cws.oregonstate.edu', 'martinad-db', $myPassword, 'martinad-db');
+
+if ($mysqli->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
 
 $username = $_SESSION['user'];
 	
