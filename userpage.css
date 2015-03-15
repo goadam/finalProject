@@ -1,0 +1,27 @@
+div#wrap{
+	margin:auto;
+	background:white;
+	width:750px;
+}
+
+header {
+	position:relative;
+	left:-200px;
+	background:#900000;
+	margin-left:0px;
+	margin-right:auto;
+	color:white;
+	text-align:center;
+	font-size: 250%;
+	width:1000px;
+	height:100px;
+	box-shadow: 15px 15px 15px #888888;
+}
+
+li {
+	list-style-type: circle;
+	position:relative;
+	left: 450px;
+	font-size: 125%;
+}
+

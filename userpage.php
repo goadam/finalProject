@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
 	<title>Road Trip Planner</title>
+	<link href="userpage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrap">
@@ -13,6 +14,7 @@
 		<label for="selected">Please type the name of the roadtrip you want to view.</label>
 		<input type="text" name="selected" id="selected" /><br/>
 		<input type="submit" value="Select"/><br>
+		<br>
 		Or click
 		<a href ="newTrip.php">here</a>
 		for new trip.
@@ -46,8 +48,8 @@ $username = $_SESSION['user'];
 
 		/* fetch value */
 		while($stmt->fetch()) {
-			echo "<p>$destination</p>";
-			echo "<br>";
+			if($destination != "")
+				echo "<li>$destination</li>";
 		}
 	}
 

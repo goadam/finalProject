@@ -2,19 +2,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Form</title>
+	<title>Road Trip Planner</title>
+	<link href="login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h2>Returning User Login</h2>
-	<form action="login.php" method="post">
-	<label for="username">Username</label>
-	<input type="text" name="username" id="username" /><br/>
-	<label for="password">Password</label>
-	<input type="text" name="password" id="password" /><br/>
-	<input type="submit" value="Login"/><br>
-	Click
-	<a href ="newLogin.php">here</a>
-	for new user.
+	<div id="wrap">
+		<header>
+				<h1>My Road Trip Planner</h1> 
+		</header>
+		<h2>Returning User Login</h2>
+		<form action="login.php" method="post">
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username" /><br/>
+		<label for="password">Password</label>
+		<input type="text" name="password" id="password" /><br/>
+		<input type="submit" value="Login"/><br>
+		<br>
+		Click
+		<a href ="newLogin.php">here</a>
+		for new user.
 </body>
 </html>
 

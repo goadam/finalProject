@@ -3,9 +3,14 @@
 <html lang="en">
 <head>
 	<title>Form</title>
+	<link href="login.css" rel="stylesheet" type="text/css">
 	<meta charset="UTF-8">
 </head>
 <body>
+	<div id="wrap">
+		<header>
+			<h1>My Road Trip Planner</h1> 
+		</header>
 	<h2>New User Login</h2>
 	<form action="newLogin.php" method="post">
 	<label for="username">Username</label>
