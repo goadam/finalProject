@@ -18,6 +18,14 @@
 		Or click
 		<a href ="newTrip.php">here</a>
 		for new trip.
+		<br>
+		Click
+		<a href ="viewOther.php">here</a>
+		to view another user's trip.
+		<br>
+		Click
+		<a href ="logout.php">here</a>
+		to logout.
 	</div>
 </body>
 </html>
@@ -26,6 +34,15 @@
 <?php
 session_start();
 include "storedInfo.php";
+
+if(!isset($_SESSION['logged_in'])) {
+		$_SESSION['logged_in'] = 0;	
+}
+	
+if($_SESSION['logged_in'] == 0) {
+			echo '<script> window.location="http://web.engr.oregonstate.edu/~martinad/final/roadTrip.html"</script>';
+	}
+	
 $mysqli = new mysqli('oniddb.cws.oregonstate.edu', 'martinad-db', $myPassword, 'martinad-db');
 
 if ($mysqli->connect_errno) {

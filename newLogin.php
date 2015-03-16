@@ -28,6 +28,11 @@
 session_start();
 include "storedInfo.php";
 
+if(!isset($_SESSION['logged_in'])) {
+		$_SESSION['logged_in'] = 0;	
+}
+	
+	
 $mysqli = new mysqli('oniddb.cws.oregonstate.edu', 'martinad-db', $myPassword, 'martinad-db');
 
 if ($mysqli->connect_errno) {
@@ -75,6 +80,7 @@ if(isset($_POST['username'])) {
 					$stmt->execute();
 					$_SESSION['user'] = $username;
 					$_SESSION['pass'] = $password;
+					$_SESSION['logged_in'] = 1;
 					echo '<script> window.location="http://web.engr.oregonstate.edu/~martinad/final/userpage.php"</script>';
 				}
 			}
