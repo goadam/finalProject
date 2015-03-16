@@ -21,6 +21,7 @@
 		Click
 		<a href ="newLogin.php">here</a>
 		for new user.
+		<br>
 </body>
 </html>
 
