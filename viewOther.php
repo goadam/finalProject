@@ -16,6 +16,10 @@
 		<label for="username">What is the username of the person's trip you wish to view?</label>
 		<input type="text" name="username" id="username" /><br/>
 		<input type="submit" value="Find"/><br>
+		<br>
+		Click
+		<a href ="userpage.php">here</a>
+		for main menu.
 	</div>
 </body>
 </html>
